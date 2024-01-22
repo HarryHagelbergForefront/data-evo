@@ -49,7 +49,7 @@ with DAG(
       task_id="create_ext_customer_category_job",
       configuration={
           "query": {
-          "query": create_ext_customer_category_query,
+          "query": load_ext_customer_category_query,
           "useLegacySql": False,
           "priority": "BATCH",
           }
