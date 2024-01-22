@@ -11,7 +11,7 @@ default_args = {
 }
 
 load_ext_customer_query = (
-  f"CREATE OR REPLACE EXTERNAL TABLE `data-evolution-harry.wwi_raw.ext_sales_customer`("
+  f"CREATE OR REPLACE EXTERNAL TABLE `data-evolution-harry.raw_wwi.ext_sales_customer`("
   f" CustomerID STRING, "
   f" CustomerName STRING, "
   f" BillToCustomerID STRING, "
@@ -50,8 +50,8 @@ load_ext_customer_query = (
   f")"
   f"OPTIONS ("
   f" format = 'CSV', "
-  f" uris = ['gs://raw-data-wwi/csv/sales.customers/*.csv'], "
-  f" hive_partition_uri_prefix = 'gs://raw-wwi1/data-evolution-wwi/csv/sales.customers', "
+  f" uris = ['gs://raw-data-wwi/csv/sales.customers/year=2013/month=*'], "
+  f" hive_partition_uri_prefix = 'gs://raw-data-wwi/csv/sales.customers', "
   f" skip_leading_rows = 1"
   f");"
 )
